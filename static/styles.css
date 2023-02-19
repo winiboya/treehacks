@@ -1,0 +1,127 @@
+/* Navbar */
+.navbar-brand {
+    font-size: xx-large;
+    color: black;
+    text-decoration: none;
+}
+
+.navbar {
+    display: flex;
+    background-color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.nav-link {
+    color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.sidenav {
+    background-color: #64A2FF;
+    border-radius: 10px;
+    position: absolute;
+    left: 150px;
+    width: 200px;
+}
+
+.blue {
+    background-color: #64A2FF;
+}
+
+li {
+    display: inline;
+    float: left;
+  }
+
+li a {
+    display: block;
+    text-align: center;
+
+}
+
+img {
+    width: 400px;
+    height: auto;
+}
+
+.center {
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+body {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+}
+
+.ex-input {
+    background-color: #dbdbdb;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.ex-prompt {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+.ex-input::placeholder {
+    font-weight: 400;
+    font-style: italic;
+    color: white;
+}
+
+.tagline {
+    font-size: 40px;
+}
+
+button {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    background: #64A2FF;
+    border-radius: 10px;
+    border: none;
+}
+
+input {
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    margin: 10px
+}
+  
+.column2 {
+    float: right;
+    width: 60%;
+    padding: 10px;
+    margin: 30px
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

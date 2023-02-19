@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Sign Up
+{% endblock %}
+
+{% block main %}
+<h class="tagline">High Tech Solutions for Better Education</h>
+
+  <div class="flex-container">
+    
+    <img src = "static/robot.gif">
+    <!-- Student sign up -->
+  <div class="card" style="padding: 30px; width: 30%; margin: 20px;">
+    <form action="/signup" method="post">
+      <div class="card-title" style="font-size: 30px">I'm a Student</div>
+      <div style="text-align: left">Username</div>
+      <div class="mb-3">
+          <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="studentusername" name="studentusername" type="text">
+      </div>
+      <div style="text-align: left">Password</div>
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="password" name="password" type="password">
+      </div>
+      <div style="text-align: left">Confirm password</div>
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" type="password">
+      </div>
+      <div style="text-align: left">I'm currently in</div>
+      <div class="mb-3">
+        <select class="form-control mx-auto w-auto" name="grade" id="grade">
+          <option disabled selected>Select</option>
+          <option value="1st grade">1st grade</option>
+          <option value="2nd grade">2nd grade</option>
+          <option value="3rd grade">3rd grade</option>
+          <option value="4th grader">4th grade</option>
+          <option value="5th grader">5th grade</option>
+          <option value="6th grader">6th grade</option>
+          <option value="7th grader">7th grade</option>
+          <option value="8th grader">8th grade</option>
+          <option value="9th grader">9th grade</option>
+          <option value="10th grader">10th grade</option>
+          <option value="11th grader">11th grade</option>
+          <option value="12th grader">12th grade</option>
+          <option value="college">college student</option>
+        </select>
+    </div>
+      <button class="nav-link center" style="margin: auto; color: white" type="submit">Sign Up</button>
+    </form>
+  </div>
+
+    <!-- Teacher sign up -->
+  <div class="card" style="padding: 30px; width: 30%; margin: 20px;">
+    <form action="/signup" method="post">
+      <div class="card-title" style="font-size: 30px">I'm a Teacher</div>
+      <div style="text-align: left">Username</div>
+      <div class="mb-3">
+          <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="teacherusername" name="teacherusername" type="text">
+      </div>
+      <div style="text-align: left">Password</div>
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="password" name="password" type="password">
+      </div>
+      <div style="text-align: left">Confirm password</div>
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" type="password">
+      </div>
+      <button class="nav-link center" style="margin: auto; color: white;" type="submit">Sign Up</button>
+    </form>
+  </div>
+  </div>
+{% endblock %}

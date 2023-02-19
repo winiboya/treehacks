@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+
+  <!-- {% for course in course_dict %}
+  <div>
+    {{ course.course_name }}
+    {{ course.topic_name }}
+    {{ course.description }}
+  </div>
+  {% endfor %} -->
+  <div class="row">
+
+    <div class="card sidenav column">
+      <div class="card-header blue" style="color: white">Courses</div>
+      <form action="/" method="post">
+      <ul class="list-group list-group-flush" style="background: #64A2FF; color: white">
+        {% for course in course_names %}
+        <form action="/" method="post">
+          <li class="list-group-item" value="course">
+            <button style="color: white; text-align: center" name="course" value="{{ course }}" type="submit">{{ course }}</button>
+          </li>
+        </form>
+        {% endfor %}
+      </ul>
+    </div>
+  
+    <div>
+      {% for topic in course_dict %}
+      <th>
+        <div class="card column2">
+          <h>
+            <form class="blue" action="/topic" method="post">
+                  <button style="color: white; background: #64A2FF" name="topic" value="{{ topic.topic_name }}" type="submit">{{ topic.topic_name }}</button>
+            </form>
+          </h>
+          <p style="font-weight: 300"> {{ topic.description }}</p>
+        </div>
+      </th>
+      {% endfor %}
+    </div>
+</div>
+
+
+
+
+
+    <!-- Side navigation
+    <div class="card; sidenav">
+      <a href="#"> 1</a>
+      <a href="#">Class 2</a>
+      <a href="#">Class 3</a>
+      <a href="#">Class 4</a>
+    </div> -->
+
+    <div id="root"></div>
+
+  </body>
+
+
+</html>
+</div>
+{% endblock %}

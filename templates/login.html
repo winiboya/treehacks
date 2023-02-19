@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+<h class="tagline">High Tech Solutions for Better Education</h>
+
+<div class="flex-container">
+  <div class="card" style="padding: 30px; width: 30%; margin: auto">
+    <form action="/login" method="post">
+      <div class="card-title" style="font-size: 30px">Log In</div>
+      <div style="text-align: left">Username</div>
+      <div class="mb-3">
+          <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" type="text">
+      </div>
+      <div style="text-align: left">Password</div>
+      <div class="mb-3">
+          <input class="form-control mx-auto w-auto" id="password" name="password" type="password">
+      </div>
+      <button class="nav-link center" style="margin: auto; color: white" type="submit">Log in</button>
+    </form>
+  </div>
+  <img src = "static/robot.gif">
+</div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Topic
+{% endblock %}
+
+{% block main %}
+<a href="/">back to all courses</a>
+<h1>{{ topic }}</h1>
+
+<div>
+    <h2>Questions from your teacher</h2>
+    {% for question in questions %}
+    <div>
+        <p>{{ question }}</p>
+    </div>
+    {% endfor %}
+
+</div>
+
+
+<div style="text-align: left; font-weight: 400; margin: 10px;">
+    <h2>Explore more</h2>
+    <form action="/topic" method="post">
+        <div class = "ex-prompt">
+            I'm having trouble understanding...
+            <input style="width: 300px" autocomplete="off" class="ex-input" name="understanding" placeholder="enter a topic (eg: the US Revolution)" type="text">
+        </div>
+        <div class = "ex-prompt">
+            Show me how to...
+            <input style="width: 350px" autocomplete="off" class="ex-input" name="show" placeholder="enter a skill (eg: code a for loop in python)" type="text">
+        </div>
+        <div class = "ex-prompt">
+            Explain more about...
+            <input style="width: 340px" autocomplete="off" class="ex-input" name="moreabout" placeholder="enter a topic (eg: atoms and particles)" type="text">
+        </div>
+        <div class = "ex-prompt">
+            Give me an example of...
+            <input style="width: 300px" autocomplete="off" class="ex-input" name="example" placeholder="enter a skill (eg: writing an outline)" type="text">
+        </div>
+        <button class="nav-link center" style="margin: auto; color: white" type="submit">ask</button>
+    </form>
+</div>
+
+<div>
+    <form action="/topic" method="post">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="question" placeholder="Ask a specific question..." name="question" type="text">
+        <button class="nav-link center" style="margin: auto; color: white" type="submit">search</button>
+    </form>
+</div>
+
+<div>
+    {% if response %}
+    <h2>Here's what we found:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+
+</div>
+{% endblock %}
