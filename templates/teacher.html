@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Title
+{% endblock %}
+
+{% block main %}
+<div>
+    {% for course in course_names %}
+    {% for topic in course_dict %}
+    <th>
+      <div class="card">
+        <div style="font-weight: 300">
+            {{ course }}
+            <select class="form-control mx-auto w-auto" name="class" id="class">
+                <option disabled selected>Select</option>
+                <option value="{{ topic.topic_name }}">{{ topic.topic_name }}</option>
+            </select>
+        </div>
+        <div>
+            {% for question in questions %}
+                <div value="{{ question }}">{{ question }}</div>
+            {% endfor %}
+        </div>
+      </div>
+    </th>
+    {% endfor %}
+    {% endfor %}
+</div>
+
+{% endblock %}

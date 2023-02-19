@@ -6,56 +6,47 @@
 
 {% block main %}
 
-  <!-- {% for course in course_dict %}
-  <div>
-    {{ course.course_name }}
-    {{ course.topic_name }}
-    {{ course.description }}
-  </div>
-  {% endfor %} -->
-  <div class="row">
-
-    <div class="card sidenav column">
-      <div class="card-header blue" style="color: white">Courses</div>
-      <form action="/" method="post">
-      <ul class="list-group list-group-flush" style="background: #64A2FF; color: white">
-        {% for course in course_names %}
-        <form action="/" method="post">
-          <li class="list-group-item" value="course">
-            <button style="color: white; text-align: center" name="course" value="{{ course }}" type="submit">{{ course }}</button>
-          </li>
-        </form>
-        {% endfor %}
-      </ul>
-    </div>
-  
-    <div>
-      {% for topic in course_dict %}
-      <th>
-        <div class="card column2">
-          <h>
-            <form class="blue" action="/topic" method="post">
-                  <button style="color: white; background: #64A2FF" name="topic" value="{{ topic.topic_name }}" type="submit">{{ topic.topic_name }}</button>
-            </form>
-          </h>
-          <p style="font-weight: 300"> {{ topic.description }}</p>
+  <div class="row flex" style="margin-left:50px">
+    <h2 style="text-align: left; padding-left:10px; font-weight: bold;">Courses and Topics Hub</h2>
+    <div class="column left">
+      <div class="card" style="width: 250px">
+        <div class="card-header" style="color: white; text-align: left; background-color: #64A2FF; border: none; border-bottom: 3px solid white">
+          Courses
         </div>
-      </th>
+        <ul class="list-group list-group-flush">
+          <form action="/" method="post">
+          {% for course in course_names %}
+            <li class="list-group-item"  style="background-color: #64A2FF; text-align: left; border: none" value="course">
+              <button style="color: white; text-align: center; font-weight: normal" name="course" value="{{ course }}" type="submit">{{ course }}</button>
+            </li>
+          {% endfor %}
+          <div class="flex search-box" style="width:250px; justify-content: center; padding: .75rem 1.25rem; ">
+            <input style="text-decoration: underline; text-align: left; background-color:white; margin: 1px 6px; width: 250px; margin-right: -2px; " autocomplete="off" class="ex-input" name="course-code" placeholder="Enter Course Code" type="text">
+            <button class="nav-link center" style="color: white; border-radius: 0px; margin-right: 0px;background-color: #bdbdbd" type="submit">+</button>
+          </div>
+        </form>
+
+        </ul>
+      </div>
+  
+    
+    </div>
+    <div class="column right">
+      {% for topic in course_dict %}
+      <div class= "card" style="text-align: left; border: 1px solid #64A2FF; width:1000px; margin-bottom:15px;">
+        <h>
+          <form class="blue" action="/topic" method="post">
+                <button style="color: white; background: #64A2FF; text-align: left; padding: 10px; font-size: large" name="topic" value="{{ topic.topic_name }}" type="submit">{{ topic.topic_name }}</button>
+          </form>
+        </h>
+        <p style="font-weight: normal; padding: 10px"> {{ topic.description }}</p>
+
+      </div>
       {% endfor %}
     </div>
-</div>
 
 
-
-
-
-    <!-- Side navigation
-    <div class="card; sidenav">
-      <a href="#"> 1</a>
-      <a href="#">Class 2</a>
-      <a href="#">Class 3</a>
-      <a href="#">Class 4</a>
-    </div> -->
+  </div>
 
     <div id="root"></div>
 

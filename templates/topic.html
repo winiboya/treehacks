@@ -1,26 +1,48 @@
 {% extends "base.html" %}
-
+                                                                                                                                                                                                                                                             
 {% block title %}
     Topic
 {% endblock %}
 
 {% block main %}
-<a href="/">back to all courses</a>
-<h1>{{ topic }}</h1>
 
-<div>
-    <h2>Questions from your teacher</h2>
+
+<div style="text-align: left; font-size: small; font-weight: normal; margin-left:50px;"><a href="/">back to all courses</a></div>
+<h2 style="text-align: left; font-weight: bold; margin-left:50px">{{ topic }}</h2>
+
+<div style="margin-left:50px; margin-right:50px">
+    <form action="/topic" method="post">
+
     {% for question in questions %}
     <div>
-        <p>{{ question }}</p>
+        <button class="teach-questions" name="question" value="{{ question }}" type="submit">{{ question }}</button>
     </div>
     {% endfor %}
+
+    <div>
+        <div class="teach-questions">
+            I'm having trouble understanding...
+            <input style="width: 300px" autocomplete="off" class="ex-input" name="understanding" placeholder="[enter a topic (eg: the US Revolution)]" type="text">
+        </div>
+        <!-- <div class="teach-questions">
+            Show me how to...
+            <input style="width: 350px" autocomplete="off" class="ex-input" name="show" placeholder="[enter a skill (eg: add large numbers)]" type="text">
+        </div>
+        <div class="teach-questions">
+            Explain more about...
+            <input style="width: 340px" autocomplete="off" class="ex-input" name="moreabout" placeholder="[enter a topic (eg: atoms and particles)]" type="text">
+        </div> -->
+        <div class="teach-questions">
+            Give me an example of...
+            <input style="width: 300px" autocomplete="off" class="ex-input" name="example" placeholder="[enter a skill (eg: writing an outline)]" type="text">
+        </div>
+  
+    </form>
 
 </div>
 
 
-<div style="text-align: left; font-weight: 400; margin: 10px;">
-    <h2>Explore more</h2>
+<!-- <div style="text-align: left; font-weight: 400; margin: 10px;">
     <form action="/topic" method="post">
         <div class = "ex-prompt">
             I'm having trouble understanding...
@@ -40,20 +62,28 @@
         </div>
         <button class="nav-link center" style="margin: auto; color: white" type="submit">ask</button>
     </form>
+</div> -->
+
+
+<div class="outputbox" id="outputbox" style="width: 100%; border-radius: 5px;">
+    {% for entry in history %}
+        <p style="text-align: right; font-weight: bold">{{ entry.input }}</p>
+        <p style="text-align: left;">{{ entry.output }}</p>
+    {% endfor %}
+    <script>
+        var chatHistory = document.getElementById("outputbox");
+        chatHistory.scrollTop = chatHistory.scrollHeight;
+    </script>
 </div>
 
-<div>
     <form action="/topic" method="post">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="question" placeholder="Ask a specific question..." name="question" type="text">
-        <button class="nav-link center" style="margin: auto; color: white" type="submit">search</button>
+        <div class="flex search-box" style="margin: auto; width: 100%; justify-content: center; "> 
+            <input style="margin-right: -2px; margin-top: 10px; border-top-right-radius:0px; border-bottom-right-radius:0px;" autocomplete="off" autofocus class="form-control w-auto question-column" id="question" placeholder="Ask a specific question..." name="question" type="text">
+            <!-- <button>Submit</button> -->
+            <button class="nav-link center" style="color: white; margin-top: 10px; border-top-left-radius:0px; border-bottom-left-radius:0px;" type="submit">search</button>
+        </div>
+    
     </form>
-</div>
 
-<div>
-    {% if response %}
-    <h2>Here's what we found:</h2>
-    <p>{{ response }}</p>
-    {% endif %}
 
-</div>
 {% endblock %}

@@ -31,16 +31,17 @@ ul {
     position: absolute;
     left: 150px;
     width: 200px;
+    text-align: center;
 }
 
 .blue {
     background-color: #64A2FF;
 }
 
-li {
+/* li {
     display: inline;
     float: left;
-  }
+  } */
 
 li a {
     display: block;
@@ -48,9 +49,87 @@ li a {
 
 }
 
+.teach-questions {
+    background-color: #F5F5F5;
+    font-style: italic;
+    width: 100%;
+    margin: 3px;
+    padding: 8px;
+    font-weight: normal;
+    border-radius: 5px;
+}
+
+.button:focus {
+    outline: none;
+  }
+
+.ex-input {
+    border: none;
+    color: #000000;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.outputbox {
+    height: 280px;
+    overflow: auto;
+    background-color: #F5F5F5;
+    font-weight: normal;
+    padding: 20px;
+    /* overflow-y: scroll;
+    overscroll-behavior-y: contain;
+    scroll-snap-type: y proximity;
+    scroll-snap-align: end; */
+}
+
+.row {
+    width: 100%;
+    display: flex;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.question-column {
+    float: left;
+    width: 80%;
+    /* margin-right: 10px; */
+}
+
+.search-column {
+    float: right;
+    width: 10%;
+    margin: 10px;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    width: auto;
+}
+
+.left{
+    width: auto;
+}
+
+.right {
+    width: auto;
+}
+
 img {
     width: 400px;
     height: auto;
+}
+
+.card-bar {
+    display: flex;
+    
+}
+
+.search-box {
+    margin: auto;
 }
 
 .center {
@@ -69,29 +148,31 @@ body {
     font-weight: 700;
 }
 
-.ex-input {
-    background-color: #dbdbdb;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-}
-
 .ex-prompt {
     margin-right: 10px;
     padding: 5px;
 }
-
+main {
+    padding-top: 40px;
+}
+.ex-input:hover {
+    border: none;
+}
 .ex-input::placeholder {
     font-weight: 400;
     font-style: italic;
-    color: white;
+    color: #bdbdbd;
+    text-decoration: underline;
 }
 
 .tagline {
     font-size: 40px;
 }
 
+
+*:focus {
+    outline: 0 !important;
+}
 button {
     font-family: 'Inter';
     font-style: normal;
@@ -99,6 +180,11 @@ button {
     background: #64A2FF;
     border-radius: 10px;
     border: none;
+    outline: none;
+}
+
+.topic-btn:focus {
+    outline: none;
 }
 
 input {
@@ -106,22 +192,33 @@ input {
     border-radius: 10px;
 }
 
-.column {
-    float: left;
-    width: 20%;
-    padding: 10px;
-    margin: 10px
-}
+
   
 .column2 {
     float: right;
-    width: 60%;
+    width: 70%;
     padding: 10px;
     margin: 30px
 }
 
-.row:after {
+.row {
     content: "";
     display: table;
     clear: both;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.container {
+    position: relative;
+    height: 200px;
+}
+  
+.centered-element {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
