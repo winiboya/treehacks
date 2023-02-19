@@ -15,6 +15,6 @@ We're proud of being able to integrate the OpenAI API into our aesthetically ple
 
 
 
-## Video
+## Project Demo
 https://user-images.githubusercontent.com/90153773/219964125-6e9f1c5f-0fa8-49bd-ae1c-4e49394936ea.mov
 
